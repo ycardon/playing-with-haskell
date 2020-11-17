@@ -1,12 +1,9 @@
 module Main where
 
-import Conway
+import Control.Monad (forM_)
+import Conway (conway)
 
 main :: IO ()
 main = do
-  print (conway 2)
-  print (conway 3)
-  print (conway 4)
-  print (conway 5)
-  print (conway 6)
-  print (conway 7)
+  putStrLn "Conway suite"
+  forM_ [0 .. 12] (print . conway)
